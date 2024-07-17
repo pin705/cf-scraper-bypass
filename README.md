@@ -32,6 +32,25 @@ pnpm install @pinjs/cf-scraper-bypass
 bun install @pinjs/cf-scraper-bypass
 ```
 
+```js
+import Scraper from "@pinjs/cf-scraper-bypass";
+
+const scraper = new Scraper({
+  headless: false,
+  skip_chromium_download: false,
+  chromium_path: "/usr/bin/chromium-browser",
+  wait_for_network_idle: false,
+  PUP_TIMEOUT: 16_000,
+});
+
+scraper
+    .proxy("[https://google.com](https://nopecha.com/demo/cloudflare)", {
+      query: { foo: "bar" },
+      headers: { "User-Agent": "Mozilla/5.0" },
+    })
+    .then((res) => console.log(res));
+```
+
 <!-- /automd -->
 
 Import:
