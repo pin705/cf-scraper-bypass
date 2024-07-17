@@ -1,8 +1,11 @@
 {
-  "name": "packageName",
-  "version": "0.0.0",
+  "name": "@pinjs/cf-scraper-bypass",
+  "version": "0.0.1",
   "description": "",
-  "repository": "unjs/packageName",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pin705/cf-scraper-bypass"
+  },
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -31,12 +34,17 @@
   "devDependencies": {
     "@biomejs/biome": "^1.7.2",
     "@types/node": "^20.12.7",
+    "@types/tough-cookie": "^4.0.5",
     "@vitest/coverage-v8": "^1.5.3",
     "automd": "^0.3.7",
     "changelogen": "^0.5.5",
     "eslint": "^9.1.1",
     "eslint-config-unjs": "^0.3.0-rc.7",
     "jiti": "^1.21.0",
+    "puppeteer": "^22.13.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "tough-cookie": "^4.1.4",
     "typescript": "^5.4.5",
     "unbuild": "^2.0.0",
     "vitest": "^1.5.3"

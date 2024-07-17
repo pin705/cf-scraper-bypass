@@ -1,9 +1,9 @@
-# packageName
+# @pinjs/cf-scraper-bypass
 
 <!-- automd:badges color=yellow -->
 
-[![npm version](https://img.shields.io/npm/v/packageName?color=yellow)](https://npmjs.com/package/packageName)
-[![npm downloads](https://img.shields.io/npm/dm/packageName?color=yellow)](https://npmjs.com/package/packageName)
+[![npm version](https://img.shields.io/npm/v/@pinjs/cf-scraper-bypass?color=yellow)](https://npmjs.com/package/@pinjs/cf-scraper-bypass)
+[![npm downloads](https://img.shields.io/npm/dm/@pinjs/cf-scraper-bypass?color=yellow)](https://npmjs.com/package/@pinjs/cf-scraper-bypass)
 
 <!-- /automd -->
 
@@ -17,19 +17,19 @@ Install package:
 
 ```sh
 # ✨ Auto-detect
-npx nypm install packageName
+npx nypm install @pinjs/cf-scraper-bypass
 
 # npm
-npm install packageName
+npm install @pinjs/cf-scraper-bypass
 
 # yarn
-yarn add packageName
+yarn add @pinjs/cf-scraper-bypass
 
 # pnpm
-pnpm install packageName
+pnpm install @pinjs/cf-scraper-bypass
 
 # bun
-bun install packageName
+bun install @pinjs/cf-scraper-bypass
 ```
 
 <!-- /automd -->
@@ -76,11 +76,11 @@ import {} from "https://esm.sh/pkg";
 
 <!-- automd:contributors license=MIT -->
 
-Published under the [MIT](https://github.com/unjs/packageName/blob/main/LICENSE) license.
-Made by [community](https://github.com/unjs/packageName/graphs/contributors) 💛
+Published under the [MIT](https://github.com/unjs/@pinjs/cf-scraper-bypass/blob/main/LICENSE) license.
+Made by [community](https://github.com/unjs/@pinjs/cf-scraper-bypass/graphs/contributors) 💛
 <br><br>
-<a href="https://github.com/unjs/packageName/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=unjs/packageName" />
+<a href="https://github.com/unjs/@pinjs/cf-scraper-bypass/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=unjs/@pinjs/cf-scraper-bypass" />
 </a>
 
 <!-- /automd -->
