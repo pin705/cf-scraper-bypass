@@ -14,6 +14,7 @@ export interface Options {
   skip_chromium_download?: boolean;
   chromium_path?: string;
   wait_for_network_idle?: boolean;
+  PUP_TIMEOUT?: number;
 }
 
 interface RequestMeta {
@@ -36,7 +37,6 @@ interface CookieMeta {
 
 export class API {
   private requests: RequestMeta[] = [];
-
   private cookies: CookieJar = new CookieJar();
   private options: Options;
   private browser?: Browser = undefined;
@@ -54,6 +54,7 @@ export class API {
     skip_chromium_download?: boolean;
     chromium_path?: string;
     wait_for_network_idle?: boolean;
+    PUP_TIMEOUT?: number;
   }) {
     this.options = options;
   }
@@ -214,12 +215,12 @@ export class API {
       await this.init();
     }
 
-    const page = await this.browser.newPage();
+    const page = await this.browser!.newPage();
     await page.goto(url);
 
     // Basic timeout
     // There's an env variable for this if you want to change it
-    const timeoutInMs = Number(process.env.PUP_TIMEOUT) || 16_000;
+    const timeoutInMs = Number(this.options.PUP_TIMEOUT) || 16_000;
 
     // Update the HTML content until the CloudFlare challenge loads
     let count = 0;

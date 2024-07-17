@@ -7,7 +7,7 @@
 
 <!-- /automd -->
 
-This is my package description.
+A simple tool to scrape Cloudflare clearance cookies (cf_clearance) from websites with Cloudflare challenges.
 
 ## Usage
 
@@ -36,24 +36,24 @@ bun install @pinjs/cf-scraper-bypass
 
 Import:
 
-<!-- automd:jsimport cjs cdn name="pkg" -->
+<!-- automd:jsimport cjs cdn name="@pinjs/cf-scraper-bypass" -->
 
 **ESM** (Node.js, Bun)
 
 ```js
-import {} from "pkg";
+import {} from "@pinjs/cf-scraper-bypass";
 ```
 
 **CommonJS** (Legacy Node.js)
 
 ```js
-const {} = require("pkg");
+const {} = require("@pinjs/cf-scraper-bypass");
 ```
 
 **CDN** (Deno, Bun and Browsers)
 
 ```js
-import {} from "https://esm.sh/pkg";
+import {} from "https://esm.sh/@pinjs/cf-scraper-bypass";
 ```
 
 <!-- /automd -->
@@ -76,11 +76,11 @@ import {} from "https://esm.sh/pkg";
 
 <!-- automd:contributors license=MIT -->
 
-Published under the [MIT](https://github.com/unjs/@pinjs/cf-scraper-bypass/blob/main/LICENSE) license.
-Made by [community](https://github.com/unjs/@pinjs/cf-scraper-bypass/graphs/contributors) 💛
+Published under the [MIT](https://github.com/pin705/cf-scraper-bypass/blob/main/LICENSE) license.
+Made by [community](https://github.com/pin705/cf-scraper-bypass/graphs/contributors) 💛
 <br><br>
-<a href="https://github.com/unjs/@pinjs/cf-scraper-bypass/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=unjs/@pinjs/cf-scraper-bypass" />
+<a href="https://github.com/pin705/cf-scraper-bypass/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=pin705/cf-scraper-bypass" />
 </a>
 
 <!-- /automd -->

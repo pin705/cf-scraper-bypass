@@ -1,49 +1,38 @@
-import { API, type ScraperOptions } from "./scraper";
+import { API, Options, type ScraperOptions } from "./scraper";
 
 export default class Scraper {
-  public headless = false;
-  public skip_chromium_download = false;
-  public chromium_path = "/usr/bin/chromium-browser";
-  public wait_for_network_idle = false;
-
-  constructor(
-    headless: boolean,
-    skip_chromium_download: boolean,
-    chromium_path: string,
-    wait_for_network_idle: boolean,
-  ) {
-    this.headless = headless;
-    this.skip_chromium_download = skip_chromium_download;
-    this.chromium_path = chromium_path;
-    this.wait_for_network_idle = wait_for_network_idle;
+  private options: Options = {
+    headless: false,
+    skip_chromium_download: false,
+    chromium_path: "/usr/bin/chromium-browser",
+    wait_for_network_idle: false,
+    PUP_TIMEOUT: 16_000,
   }
 
-  async proxy(url: string, options: ScraperOptions) {
-    // Initialize the API instance
-    const Api = new API({
-      headless: this.headless,
-      skip_chromium_download: this.skip_chromium_download,
-      chromium_path: this.chromium_path,
-      wait_for_network_idle: this.wait_for_network_idle,
-    });
+  client: API;
+
+  constructor(options: Options) {
+    this.options = { ...this.options, ...options }; // Merge default and passed options
+    this.client = new API(this.options);
+  }
+
+  async proxy(url: string, options: ScraperOptions): Promise<string | undefined> {
     const seriURL = `${url}?${serialize(options.query as Record<string, string | number | boolean>)}`;
     try {
-      const response = await Api.request(seriURL, {
+      const response = await this.client.request(seriURL, {
         headers: options.headers as Record<string, string>,
       });
       return response.content;
     } finally {
-      // Make sure to close the API instance even if an error occurs
-      await Api.close();
+      await this.client.close();
     }
   }
 }
 
-function serialize(obj?: Record<string, string | number | boolean>) {
-  const str = [];
-  for (const p in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, p))
-      str.push(`${encodeURIComponent(p)}=${encodeURIComponent(obj[p])}`);
-  }
-  return str.join("&");
+function serialize(obj?: Record<string, string | number | boolean>): string {
+  return obj
+    ? Object.entries(obj)
+        .map(([key, val]) => `${encodeURIComponent(key)}=${encodeURIComponent(val)}`)
+        .join("&")
+    : "";
 }
