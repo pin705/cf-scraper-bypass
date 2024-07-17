@@ -41,19 +41,19 @@ Import:
 **ESM** (Node.js, Bun)
 
 ```js
-import {} from "@pinjs/cf-scraper-bypass";
+import Scraper from "@pinjs/cf-scraper-bypass";
 ```
 
 **CommonJS** (Legacy Node.js)
 
 ```js
-const {} = require("@pinjs/cf-scraper-bypass");
+const Scraper = require("@pinjs/cf-scraper-bypass");
 ```
 
 **CDN** (Deno, Bun and Browsers)
 
 ```js
-import {} from "https://esm.sh/@pinjs/cf-scraper-bypass";
+import Scraper from "https://esm.sh/@pinjs/cf-scraper-bypass";
 ```
 
 <!-- /automd -->
