@@ -10,10 +10,6 @@ const scraper = new Scraper({
 
 runScraper();
 function runScraper() {
-  scraper
-    .proxy("https://google.com", {
-      query: { foo: "bar" },
-      headers: { "User-Agent": "Mozilla/5.0" },
-    })
+  scraper.proxy("https://nopecha.com/demo/cloudflare", {})
     .then((res) => console.log(res));
 }

@@ -1,4 +1,4 @@
-import { API, Options, type ScraperOptions } from "./scraper";
+import { API, type Options, type ScraperOptions } from "./scraper";
 
 export default class Scraper {
   private options: Options = {
@@ -7,7 +7,7 @@ export default class Scraper {
     chromium_path: "/usr/bin/chromium-browser",
     wait_for_network_idle: false,
     PUP_TIMEOUT: 16_000,
-  }
+  };
 
   client: API;
 
@@ -16,8 +16,13 @@ export default class Scraper {
     this.client = new API(this.options);
   }
 
-  async proxy(url: string, options: ScraperOptions): Promise<string | undefined> {
-    const seriURL = `${url}?${serialize(options.query as Record<string, string | number | boolean>)}`;
+  async proxy(
+    url: string,
+    options: ScraperOptions,
+  ): Promise<string | undefined> {
+    const seriURL = `${url}?${serialize(
+      options.query as Record<string, string | number | boolean>,
+    )}`;
     try {
       const response = await this.client.request(seriURL, {
         headers: options.headers as Record<string, string>,
@@ -32,7 +37,10 @@ export default class Scraper {
 function serialize(obj?: Record<string, string | number | boolean>): string {
   return obj
     ? Object.entries(obj)
-        .map(([key, val]) => `${encodeURIComponent(key)}=${encodeURIComponent(val)}`)
+        .map(
+          ([key, val]) =>
+            `${encodeURIComponent(key)}=${encodeURIComponent(val)}`,
+        )
         .join("&")
     : "";
 }
