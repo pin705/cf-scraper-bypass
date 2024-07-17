@@ -32,6 +32,22 @@ pnpm install @pinjs/cf-scraper-bypass
 bun install @pinjs/cf-scraper-bypass
 ```
 
+```js
+import Scraper from "@pinjs/cf-scraper-bypass";
+
+const scraper = new Scraper({
+  headless: false,
+  skip_chromium_download: false,
+  chromium_path: "/usr/bin/chromium-browser",
+  wait_for_network_idle: false,
+  PUP_TIMEOUT: 16_000,
+});
+
+scraper
+    .proxy("https://nopecha.com/demo/cloudflare")
+    .then((res) => console.log(res));
+```
+
 <!-- /automd -->
 
 Import:
@@ -41,19 +57,19 @@ Import:
 **ESM** (Node.js, Bun)
 
 ```js
-import {} from "@pinjs/cf-scraper-bypass";
+import Scraper from "@pinjs/cf-scraper-bypass";
 ```
 
 **CommonJS** (Legacy Node.js)
 
 ```js
-const {} = require("@pinjs/cf-scraper-bypass");
+const Scraper = require("@pinjs/cf-scraper-bypass");
 ```
 
 **CDN** (Deno, Bun and Browsers)
 
 ```js
-import {} from "https://esm.sh/@pinjs/cf-scraper-bypass";
+import Scraper from "https://esm.sh/@pinjs/cf-scraper-bypass";
 ```
 
 <!-- /automd -->
