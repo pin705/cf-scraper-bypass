@@ -215,7 +215,7 @@ export class API {
       await this.init();
     }
 
-    const page = await this.browser.newPage();
+    const page = await this.browser!.newPage();
     await page.goto(url);
 
     // Basic timeout
