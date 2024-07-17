@@ -44,7 +44,7 @@ const scraper = new Scraper({
 });
 
 scraper
-    .proxy("https://nopecha.com/demo/cloudflare")
+    .proxy("https://google.com", {})
     .then((res) => console.log(res));
 ```
 
