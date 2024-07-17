@@ -44,10 +44,7 @@ const scraper = new Scraper({
 });
 
 scraper
-    .proxy("[https://google.com](https://nopecha.com/demo/cloudflare)", {
-      query: { foo: "bar" },
-      headers: { "User-Agent": "Mozilla/5.0" },
-    })
+    .proxy("https://nopecha.com/demo/cloudflare")
     .then((res) => console.log(res));
 ```
 
